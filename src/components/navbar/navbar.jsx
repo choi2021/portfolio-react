@@ -6,7 +6,7 @@ const Navbar = (props) => {
     <header className={styles.header}>
       <div className={styles.logoAndTitle}>
         <img className={styles.logo} src="/assets/favicon.png" alt="" />
-        <h1 className={styles.title}>Youngjun</h1>
+        <h1 className={styles.title}>Young jun</h1>
       </div>
       <ul className={styles.btns}>
         <button className={styles.btn}>Home</button>
