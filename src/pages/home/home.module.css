@@ -1,0 +1,28 @@
+@value colorDarkBlue,colorWhite from "../../common/color.css";
+
+.container {
+  background: url("/public/assets/home.jpg") center/cover;
+  height: 100vh;
+  margin-top: 5em;
+  padding: 0.5em 0;
+  text-align: center;
+}
+
+.profile {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  border: 2px solid colorDarkBlue;
+}
+
+.message {
+  color: colorWhite;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.2em 0.5em;
+  background-color: White;
+  font-size: 1.5rem;
+  border-radius: 0.5em;
+}
