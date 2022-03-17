@@ -1,0 +1,36 @@
+@value colorDeepYellow,colorDimGray from "../../common/color.css";
+
+.container {
+  padding: 0 2em;
+}
+
+.metadata {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bar {
+  height: 2px;
+  background-color: colorDimGray;
+}
+
+.html,
+.css,
+.js,
+.react {
+  background-color: colorDeepYellow;
+  height: 2px;
+}
+
+.html,
+.css {
+  width: 60%;
+}
+
+.js {
+  width: 40%;
+}
+
+.react {
+  width: 20%;
+}

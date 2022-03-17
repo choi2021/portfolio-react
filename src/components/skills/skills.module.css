@@ -1,0 +1,55 @@
+@value colorBlue,colorWhite,colorDarkGray,colorDimGray,colorLightGray,colorBlack from "../../common/color.css";
+
+.container {
+  height: 100vh;
+  margin-top: 5em;
+  padding: 0.5em 0;
+  text-align: center;
+  background-color: colorBlue;
+  color: colorWhite;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+}
+
+.description {
+  font-size: 1.3rem;
+  margin-bottom: 4em;
+}
+
+.content {
+  height: 20rem;
+  background-color: colorBlack;
+  display: flex;
+  margin: auto;
+  width: 50rem;
+}
+
+.bars {
+  margin: 0;
+  padding: 0;
+  flex-basis: 65%;
+  list-style: none;
+}
+
+.toolList {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool {
+  background-color: colorDarkGray;
+  width: 100%;
+  flex-basis: 50%;
+}
+
+.etc {
+  background-color: colorDimGray;
+  flex-basis: 50%;
+}

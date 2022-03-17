@@ -1,0 +1,67 @@
+@value colorBlue,colorDarkBlue from "../../common/color.css";
+.container {
+  height: 100vh;
+  margin-top: 5em;
+  padding: 0.5em 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.message {
+  font-size: 1.3rem;
+  margin-bottom: 4em;
+}
+
+.stacks {
+  margin: auto;
+  max-width: 50rem;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 4em;
+}
+
+.stack {
+  font-size: 1.4rem;
+}
+
+.icon {
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: colorBlue;
+  transition: all ease 500ms;
+  width: 15rem;
+  height: 15rem;
+  border: 2px solid colorBlue;
+  border-radius: 50%;
+}
+
+.icon:hover {
+  color: colorDarkBlue;
+  transform: rotate(30deg);
+  border-color: colorDarkBlue;
+}
+
+.degree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.metadata {
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+}
