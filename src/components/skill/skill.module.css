@@ -22,15 +22,18 @@
   height: 2px;
 }
 
-.html,
-.css {
+.html {
   width: 60%;
 }
 
-.js {
+.css {
   width: 40%;
 }
 
-.react {
+.js {
   width: 20%;
+}
+
+.react {
+  width: 15%;
 }

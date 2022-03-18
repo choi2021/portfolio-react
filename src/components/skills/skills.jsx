@@ -3,6 +3,24 @@ import Skill from "../skill/skill";
 import styles from "./skills.module.css";
 
 const Skills = (props) => {
+  const [stacks, setStacks] = useState([
+    {
+      name: "HTML",
+      amount: "60%",
+    },
+    {
+      name: "CSS",
+      amount: "40%",
+    },
+    {
+      name: "Javascript",
+      amount: "30%",
+    },
+    {
+      name: "React",
+      amount: "15%",
+    },
+  ]);
   return (
     <section className={styles.container}>
       <h1 className={styles.title}>Skills</h1>
@@ -19,10 +37,9 @@ const Skills = (props) => {
       <div className={styles.content}>
         <ul className={styles.bars}>
           <h3 className={styles.skillTitle}>Skills</h3>
-          <Skill name="HTML" amount="60%"></Skill>
-          <Skill name="CSS" amount="60%"></Skill>
-          <Skill name="JS" amount="40%"></Skill>
-          <Skill name="REACT" amount="20%"></Skill>
+          {stacks.map((stack) => (
+            <Skill name={stack.name} amount={stack.amount}></Skill>
+          ))}
         </ul>
         <div className={styles.toolList}>
           <div className={styles.tool}>

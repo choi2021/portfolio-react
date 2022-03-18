@@ -24,9 +24,9 @@ function barStyle(name) {
       return styles.html;
     case "CSS":
       return styles.css;
-    case "JS":
+    case "Javascript":
       return styles.js;
-    case "REACT":
+    case "React":
       return styles.react;
   }
 }
