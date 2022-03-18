@@ -7,6 +7,7 @@ const WorkList = ({ workList }) => {
     <ul className={styles.list}>
       {workList.map((item) => (
         <WorkItem
+          title={item.title}
           key={item.id}
           url={item.url}
           imgURL={item.imgURL}

@@ -7,6 +7,7 @@ const Projects = (props) => {
   const [workList, setWorkList] = useState([
     {
       id: 1,
+      title: "Youtube UI",
       url: "#",
       category: "side",
       imgURL: "/assets/home.jpg",
@@ -14,6 +15,7 @@ const Projects = (props) => {
     },
     {
       id: 2,
+      title: "Youtube UI",
       url: "#",
       category: "side",
       imgURL: "/assets/favicon.png",
@@ -21,6 +23,7 @@ const Projects = (props) => {
     },
     {
       id: 3,
+      title: "Youtube UI",
       url: "#",
       category: "side",
       imgURL: "/assets/profile.jpg",
@@ -28,6 +31,7 @@ const Projects = (props) => {
     },
     {
       id: 4,
+      title: "Youtube UI",
       url: "#",
       category: "side",
       imgURL: "/assets/profile.jpg",
@@ -35,6 +39,7 @@ const Projects = (props) => {
     },
     {
       id: 5,
+      title: "Youtube UI",
       url: "#",
       category: "side",
       imgURL: "/assets/profile.jpg",
@@ -46,22 +51,40 @@ const Projects = (props) => {
     {
       title: "All",
       clicked: true,
+      amount: 6,
     },
     {
       title: "Side Projects",
       clicked: false,
+      amount: 3,
     },
     {
       title: "Team Projects",
       clicked: false,
+      amount: 3,
     },
   ]);
+
+  const handleClick = (e) => {
+    const title = e.target.dataset.title;
+    if (title === undefined) {
+      return;
+    }
+    setMenuList((menuList) => {
+      return [...menuList].map((item) => {
+        if (item.title === title) {
+          return { ...item, clicked: true };
+        }
+        return { ...item, clicked: false };
+      });
+    });
+  };
 
   return (
     <section className={styles.container}>
       <h1 className={styles.title}>My Works</h1>
       <h3 className={styles.subtitle}>Projects</h3>
-      <ProjectMenu menuList={menuList}></ProjectMenu>
+      <ProjectMenu menuList={menuList} onClick={handleClick}></ProjectMenu>
       <WorkList workList={workList}></WorkList>
     </section>
   );
