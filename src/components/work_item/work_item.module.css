@@ -1,0 +1,44 @@
+@value colorLightYellow,colorWhite,colorDarkGray,colorDimGray,colorLightGray,colorBlack from "../../common/color.css";
+
+.container {
+  position: relative;
+  width: 20rem;
+  height: 18rem;
+  margin-bottom: 2em;
+}
+
+.container:hover .description {
+  transform: none;
+  opacity: 1;
+}
+
+.a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.description {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: colorBlack;
+  background-color: colorLightYellow;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+.text {
+  font-size: 1.3rem;
+}

@@ -38,7 +38,11 @@ const Skills = (props) => {
         <ul className={styles.bars}>
           <h3 className={styles.skillTitle}>Skills</h3>
           {stacks.map((stack) => (
-            <Skill name={stack.name} amount={stack.amount}></Skill>
+            <Skill
+              name={stack.name}
+              amount={stack.amount}
+              key={stack.name}
+            ></Skill>
           ))}
         </ul>
         <div className={styles.toolList}>

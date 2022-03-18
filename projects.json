@@ -1,0 +1,20 @@
+{
+  "projects": [
+    {
+      "category": "side",
+      "imageURL": "public/assets/home.jpg"
+    },
+    {
+      "category": "side",
+      "imageURL": "public/assets/home.jpg"
+    },
+    {
+      "category": "side",
+      "imageURL": "public/assets/home.jpg"
+    },
+    {
+      "category": "side",
+      "imageURL": "public/assets/home.jpg"
+    }
+  ]
+}
