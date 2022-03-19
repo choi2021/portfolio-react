@@ -3,4 +3,10 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   list-style: none;
+  transition: all ease 300ms;
+}
+
+.list.anim {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
 }

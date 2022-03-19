@@ -7,6 +7,10 @@
   margin-bottom: 2em;
 }
 
+.invisible {
+  display: none;
+}
+
 .container:hover .metadata {
   transform: none;
   opacity: 1;

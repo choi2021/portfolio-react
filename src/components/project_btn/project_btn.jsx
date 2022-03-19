@@ -1,16 +1,18 @@
 import React from "react";
 import styles from "./project_btn.module.css";
 
-const ProjectBtn = ({ title, amount, clicked, onClick }) => {
+const ProjectBtn = ({ title, count, clicked, category }) => {
   return (
     <li className={styles.item}>
       <button
         className={`${styles.btn} ${clicked && styles.clicked}`}
-        data-title={title}
+        data-category={category}
       >
         {title}
       </button>
-      <div className={`${styles.amount} ${clicked && styles.clicked}`}>8</div>
+      <div className={`${styles.amount} ${clicked && styles.clicked}`}>
+        {count}
+      </div>
     </li>
   );
 };
