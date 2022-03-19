@@ -1,11 +1,11 @@
-@value colorBlue,colorWhite,colorDarkGray,colorDimGray,colorLightGray,colorBlack from "../../common/color.css";
+@value colorDarkBlue,colorWhite,colorDarkGray,colorDimGray,colorLightGray,colorBlack from "../../common/color.css";
 
 .container {
   height: 100vh;
   margin-top: 5em;
   padding: 0.5em 0;
   text-align: center;
-  background-color: colorBlue;
+  background-color: colorDarkBlue;
   color: colorWhite;
 }
 

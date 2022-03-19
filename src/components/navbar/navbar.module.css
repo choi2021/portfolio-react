@@ -8,6 +8,7 @@
   height: 5rem;
   display: flex;
   color: colorWhite;
+  z-index: 100;
 }
 
 .logoAndTitle {

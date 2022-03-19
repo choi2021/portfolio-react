@@ -1,7 +1,6 @@
 @value colorBlue,colorWhite,colorDarkGray,colorDimGray,colorLightGray,colorBlack from "../../common/color.css";
 
 .container {
-  height: 100vh;
   margin-top: 5em;
   padding: 0.5em 0;
   text-align: center;
