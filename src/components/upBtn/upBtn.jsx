@@ -1,10 +1,11 @@
 import React from "react";
-import { FaArrowUp } from "react-icons/fa";
+import { FaHandPointUp } from "react-icons/fa";
+import styles from "./upbtn.module.css";
 
-const UpBtn = ({}) => {
+const UpBtn = ({ onClick }) => {
   return (
-    <button>
-      <FaArrowUp></FaArrowUp>
+    <button className={styles.btn} onClick={onClick}>
+      <FaHandPointUp></FaHandPointUp>
     </button>
   );
 };

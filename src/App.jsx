@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/navbar";
 import Home from "./components/home/home";
@@ -6,9 +6,12 @@ import About from "./components/about/about";
 import Skills from "./components/skills/skills";
 import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
+import UpBtn from "./components/upbtn/upbtn";
 
 function App() {
   const [sectionRefs, setSectionRefs] = useState({});
+  const [homePos, sethomePos] = useState();
+  const [visibleBtn, setVisibleBtn] = useState();
   const [projects, setProjects] = useState([
     {
       id: 1,
@@ -97,6 +100,13 @@ function App() {
     });
   };
 
+  const handleUpbtn = () => {
+    sectionRefs["home"].current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
   return (
     <>
       <Navbar refs={sectionRefs}></Navbar>
@@ -105,7 +115,7 @@ function App() {
       <Skills getRef={getRefs}></Skills>
       <Projects projects={projects} getRef={getRefs}></Projects>
       <Contact getRef={getRefs}></Contact>
-      <UpBtn></UpBtn>
+      <UpBtn onClick={handleUpbtn}></UpBtn>
     </>
   );
 }

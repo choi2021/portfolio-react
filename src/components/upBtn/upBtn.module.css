@@ -1,0 +1,16 @@
+@value colorBlue from "../../common/color.css";
+
+.btn {
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  font-size: 2rem;
+  border-radius: 50%;
+  color: colorBlue;
+  border: 1.2px solid colorBlue;
+  cursor: pointer;
+}
+
+.invisible {
+  display: none;
+}
