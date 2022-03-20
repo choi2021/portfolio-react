@@ -12,7 +12,6 @@ function App() {
   const [sectionRefs, setSectionRefs] = useState({});
   const [visibleNav, setVisibleNav] = useState(false);
   const [visibleBtn, setVisibleBtn] = useState(false);
-  const [activeBtn, setActiveBtn] = useState("home");
 
   useEffect(() => {
     window.addEventListener("wheel", (e) => {
@@ -34,7 +33,7 @@ function App() {
         return;
       }
       const rect = sectionRefs["home"].current.getBoundingClientRect();
-      if (e.pageY > rect.height) {
+      if (e.pageY > rect.height + 20) {
         setVisibleBtn(true);
       } else {
         setVisibleBtn(false);
@@ -47,9 +46,22 @@ function App() {
       threshold: 0.3,
     };
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (!entry.isIntersecting) {
-          console.log(entry.target.dataset.section);
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+          const index = Object.values(sectionRefs)
+            .map((item) => item.current)
+            .indexOf(entry.target);
+          if (entry.boundingClientRect.y < 0) {
+            const section = Object.values(sectionRefs).map(
+              (item) => item.current.dataset.section
+            )[index + 1];
+            handleActive(section);
+          } else {
+            const section = Object.values(sectionRefs).map(
+              (item) => item.current.dataset.section
+            )[index - 1];
+            handleActive(section);
+          }
         }
       });
     }, options);
@@ -58,6 +70,29 @@ function App() {
       observer.observe(ref.current);
     });
   }, [sectionRefs]);
+
+  const [btns, setBtns] = useState([
+    {
+      name: "home",
+      active: true,
+    },
+    {
+      name: "about",
+      active: false,
+    },
+    {
+      name: "skills",
+      active: false,
+    },
+    {
+      name: "projects",
+      active: false,
+    },
+    {
+      name: "contact",
+      active: false,
+    },
+  ]);
 
   const [projects, setProjects] = useState([
     {
@@ -134,10 +169,6 @@ function App() {
     },
   ]);
 
-  const handleObserver = (entries) => {
-    console.log(entries);
-  };
-
   const handleContactBtn = () => {
     sectionRefs["contact"].current.scrollIntoView({
       behavior: "smooth",
@@ -158,12 +189,25 @@ function App() {
     });
   };
 
+  const handleActive = (section) => {
+    setBtns((btns) => {
+      return btns.map((btn) => {
+        if (btn.name === section) {
+          return { ...btn, active: true };
+        } else {
+          return { ...btn, active: false };
+        }
+      });
+    });
+  };
+
   return (
     <>
       <Navbar
         refs={sectionRefs}
         visible={visibleNav}
-        activeBtn={activeBtn}
+        btns={btns}
+        onActive={handleActive}
       ></Navbar>
       <Home onClick={handleContactBtn} getRef={getRefs}></Home>
       <About getRef={getRefs}></About>

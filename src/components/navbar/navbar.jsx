@@ -2,30 +2,7 @@ import React, { useRef, useState } from "react";
 import MenuBtn from "../menubtn/menubtn";
 import styles from "./navbar.module.css";
 
-const Navbar = ({ refs, visible, activeBtn }) => {
-  const [btns, setBtns] = useState([
-    {
-      name: "home",
-      active: true,
-    },
-    {
-      name: "about",
-      active: false,
-    },
-    {
-      name: "skills",
-      active: false,
-    },
-    {
-      name: "projects",
-      active: false,
-    },
-    {
-      name: "contact",
-      active: false,
-    },
-  ]);
-
+const Navbar = ({ refs, visible, onActive, btns }) => {
   const handleClick = (e) => {
     const section = e.target.dataset.section;
     if (!section) {
@@ -35,19 +12,7 @@ const Navbar = ({ refs, visible, activeBtn }) => {
       block: "start",
     });
 
-    handleActive(section);
-  };
-
-  const handleActive = (section) => {
-    setBtns((btns) => {
-      return btns.map((btn) => {
-        if (btn.name === section) {
-          return { ...btn, active: true };
-        } else {
-          return { ...btn, active: false };
-        }
-      });
-    });
+    onActive(section);
   };
 
   return (
@@ -58,7 +23,7 @@ const Navbar = ({ refs, visible, activeBtn }) => {
       </div>
       <ul className={styles.btns} onClick={handleClick}>
         {btns.map((btn) => (
-          <MenuBtn name={btn.name} active={btn.active}></MenuBtn>
+          <MenuBtn name={btn.name} key={btn.name} active={btn.active}></MenuBtn>
         ))}
       </ul>
     </header>
