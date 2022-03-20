@@ -28,9 +28,9 @@ const Skills = (props) => {
       <p className={styles.description}>
         프론트엔드의 기본인 HTML,CSS, vanilla JS를 잘 이해하고 있습니다.{" "}
         <br></br>
-        자바스크립트 라이브러리인 <b>REACT</b>를 공부하면서 component화에 대해
-        고민하고 <br></br> 상태관리에 필요한 <b>Redux</b>와 페이지 관리를 위한{" "}
-        <b>Router</b>를 공부했습니다.<br></br>
+        자바스크립트 라이브러리인 <b>REACT</b>를 계속해서 공부하며 성능,
+        <br></br> 상태관리에 필요한 <b>Redux</b>, 페이지 관리를 위한{" "}
+        <b>Router</b>를 공부하고 있습니다.<br></br>
         협업에 중요한 <b>Git</b>과 부족한 CS에 대해서 매일 공부하고 있습니다.
         <br></br>
       </p>
