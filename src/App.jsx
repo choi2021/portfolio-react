@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/navbar";
 import Home from "./components/home/home";
@@ -10,8 +10,55 @@ import UpBtn from "./components/upbtn/upbtn";
 
 function App() {
   const [sectionRefs, setSectionRefs] = useState({});
-  const [homePos, sethomePos] = useState();
-  const [visibleBtn, setVisibleBtn] = useState();
+  const [visibleNav, setVisibleNav] = useState(false);
+  const [visibleBtn, setVisibleBtn] = useState(false);
+  const [activeBtn, setActiveBtn] = useState("home");
+
+  useEffect(() => {
+    window.addEventListener("wheel", (e) => {
+      if (sectionRefs.home === undefined) {
+        return;
+      }
+      const rect = sectionRefs["home"].current.getBoundingClientRect();
+      if (e.pageY / rect.height >= 0.2) {
+        setVisibleNav(true);
+      } else {
+        setVisibleNav(false);
+      }
+    });
+  }, [sectionRefs.home]);
+
+  useEffect(() => {
+    window.addEventListener("wheel", (e) => {
+      if (sectionRefs.home === undefined) {
+        return;
+      }
+      const rect = sectionRefs["home"].current.getBoundingClientRect();
+      if (e.pageY > rect.height) {
+        setVisibleBtn(true);
+      } else {
+        setVisibleBtn(false);
+      }
+    });
+  }, [sectionRefs.home]);
+
+  useEffect(() => {
+    const options = {
+      threshold: 0.3,
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (!entry.isIntersecting) {
+          console.log(entry.target.dataset.section);
+        }
+      });
+    }, options);
+
+    Object.values(sectionRefs).forEach((ref) => {
+      observer.observe(ref.current);
+    });
+  }, [sectionRefs]);
+
   const [projects, setProjects] = useState([
     {
       id: 1,
@@ -87,6 +134,10 @@ function App() {
     },
   ]);
 
+  const handleObserver = (entries) => {
+    console.log(entries);
+  };
+
   const handleContactBtn = () => {
     sectionRefs["contact"].current.scrollIntoView({
       behavior: "smooth",
@@ -109,13 +160,17 @@ function App() {
 
   return (
     <>
-      <Navbar refs={sectionRefs}></Navbar>
+      <Navbar
+        refs={sectionRefs}
+        visible={visibleNav}
+        activeBtn={activeBtn}
+      ></Navbar>
       <Home onClick={handleContactBtn} getRef={getRefs}></Home>
       <About getRef={getRefs}></About>
       <Skills getRef={getRefs}></Skills>
       <Projects projects={projects} getRef={getRefs}></Projects>
       <Contact getRef={getRefs}></Contact>
-      <UpBtn onClick={handleUpbtn}></UpBtn>
+      <UpBtn onClick={handleUpbtn} visible={visibleBtn}></UpBtn>
     </>
   );
 }

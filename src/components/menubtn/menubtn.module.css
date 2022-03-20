@@ -1,0 +1,26 @@
+@value colorDarkBlue,colorWhite from "../../common/color.css";
+
+.btn {
+  padding: 0.5em 1em;
+  font-size: 1.3rem;
+  margin-right: 1em;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: colorWhite;
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  transition: all ease 300ms;
+}
+
+.btn:hover {
+  border-color: colorWhite;
+  background-color: colorWhite;
+  color: colorDarkBlue;
+}
+
+.btn.active {
+  border-color: colorWhite;
+  background-color: colorWhite;
+  color: colorDarkBlue;
+}

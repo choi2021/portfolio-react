@@ -10,7 +10,11 @@ const Contact = ({ getRef }) => {
   }, []);
 
   return (
-    <section className={styles.container} ref={contactRef}>
+    <section
+      className={styles.container}
+      ref={contactRef}
+      data-section="contact"
+    >
       <h1 className={styles.title}>Let's Talk</h1>
       <h3 className={styles.email}>juni2004c@gmail.com</h3>
       <a href="#" className={styles.btn}>

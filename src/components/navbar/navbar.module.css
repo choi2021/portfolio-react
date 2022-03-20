@@ -9,6 +9,11 @@
   display: flex;
   color: colorWhite;
   z-index: 100;
+  transition: all ease 300ms;
+}
+
+.invisible {
+  background-color: transparent;
 }
 
 .logoAndTitle {
@@ -35,23 +40,4 @@
   justify-content: center;
   padding: 0;
   margin-right: 1em;
-}
-
-.btn {
-  padding: 0.5em 1em;
-  font-size: 1.3rem;
-  margin-right: 1em;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  color: colorWhite;
-  border: 1px solid transparent;
-  border-radius: 0.5em;
-  transition: all ease 300ms;
-}
-
-.btn:hover {
-  border-color: White;
-  background-color: White;
-  color: colorDarkBlue;
 }

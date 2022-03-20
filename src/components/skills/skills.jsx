@@ -26,7 +26,7 @@ const Skills = ({ getRef }) => {
     },
   ]);
   return (
-    <section className={styles.container} ref={skillsRef}>
+    <section className={styles.container} ref={skillsRef} data-section="skills">
       <h1 className={styles.title}>Skills</h1>
       <h3 className={styles.subtitle}>Skills & Attributes</h3>
       <p className={styles.description}>

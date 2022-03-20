@@ -2,13 +2,13 @@
 
 .container {
   background: url("/public/assets/home.jpg") center/cover;
-  height: 100vh;
-  margin-top: 5em;
+  height: 110vh;
   padding: 0.5em 0;
   text-align: center;
 }
 
 .profile {
+  margin-top: 5em;
   width: 25rem;
   height: 25rem;
   border-radius: 50%;

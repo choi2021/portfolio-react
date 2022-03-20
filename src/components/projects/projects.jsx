@@ -73,7 +73,11 @@ const Projects = ({ projects, getRef }) => {
   };
 
   return (
-    <section className={styles.container} ref={projectsRef}>
+    <section
+      className={styles.container}
+      ref={projectsRef}
+      data-section="projects"
+    >
       <h1 className={styles.title}>My Works</h1>
       <h3 className={styles.subtitle}>Projects</h3>
       <ProjectMenu

@@ -8,7 +8,7 @@ const About = ({ getRef }) => {
     getRef(aboutRef, "about");
   }, []);
   return (
-    <section className={styles.container} ref={aboutRef}>
+    <section className={styles.container} ref={aboutRef} data-section="about">
       <h1 className={styles.title}>About Me</h1>
       <p className={styles.message}>
         2021년 5월, HTML과 CSS공부를 시작으로 자바스크립트, 리액트를 즐겁게

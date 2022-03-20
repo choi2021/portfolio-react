@@ -9,6 +9,7 @@
   color: colorBlue;
   border: 1.2px solid colorBlue;
   cursor: pointer;
+  transition: all ease 300ms;
 }
 
 .invisible {
