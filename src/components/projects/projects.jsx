@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProjectMenu from "../project_menu/project_menu";
 import WorkList from "../work_list/work_list";
 import styles from "./projects.module.css";
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects, getRef }) => {
+  const projectsRef = useRef();
   const [workList, setWorkList] = useState(projects);
-  const [menuCount, setMenuCount] = useState(0);
+  useEffect(() => {
+    getRef(projectsRef, "projects");
+  }, []);
   const [menuClicked, setMenuClicked] = useState(false);
   const [menuList, setMenuList] = useState([
     {
@@ -70,7 +73,7 @@ const Projects = ({ projects }) => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} ref={projectsRef}>
       <h1 className={styles.title}>My Works</h1>
       <h3 className={styles.subtitle}>Projects</h3>
       <ProjectMenu

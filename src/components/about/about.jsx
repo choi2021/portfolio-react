@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./about.module.css";
 import { FaReact, FaJs } from "react-icons/fa";
 
-const About = () => {
+const About = ({ getRef }) => {
+  const aboutRef = useRef();
+  useEffect(() => {
+    getRef(aboutRef, "about");
+  }, []);
   return (
-    <section className={styles.container}>
+    <section className={styles.container} ref={aboutRef}>
       <h1 className={styles.title}>About Me</h1>
       <p className={styles.message}>
         2021년 5월, HTML과 CSS공부를 시작으로 자바스크립트, 리액트를 즐겁게

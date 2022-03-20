@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Skill from "../skill/skill";
 import styles from "./skills.module.css";
 
-const Skills = (props) => {
+const Skills = ({ getRef }) => {
+  const skillsRef = useRef();
+  useEffect(() => {
+    getRef(skillsRef, "skills");
+  }, []);
   const [stacks, setStacks] = useState([
     {
       name: "HTML",
@@ -22,15 +26,15 @@ const Skills = (props) => {
     },
   ]);
   return (
-    <section className={styles.container}>
+    <section className={styles.container} ref={skillsRef}>
       <h1 className={styles.title}>Skills</h1>
       <h3 className={styles.subtitle}>Skills & Attributes</h3>
       <p className={styles.description}>
-        프론트엔드의 기본인 HTML,CSS, vanilla JS를 잘 이해하고 있습니다.{" "}
+        프론트엔드의 기본인 HTML,CSS, vanilla JS를 공부해 DOM과 페이지가
+        rendering되는 과정을 이해하고 있습니다.<br></br>
+        <b>REACT</b>와 함께, 상태관리를 위한 Redux, 페이지 관리를 위한 Router
+        등을 공부하고 있습니다.
         <br></br>
-        자바스크립트 라이브러리인 <b>REACT</b>를 계속해서 공부하며 성능,
-        <br></br> 상태관리에 필요한 <b>Redux</b>, 페이지 관리를 위한{" "}
-        <b>Router</b>를 공부하고 있습니다.<br></br>
         협업에 중요한 <b>Git</b>과 부족한 CS에 대해서 매일 공부하고 있습니다.
         <br></br>
       </p>
