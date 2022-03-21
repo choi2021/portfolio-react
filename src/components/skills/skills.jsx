@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import Skill from "../skill/skill";
 import styles from "./skills.module.css";
 
-const Skills = ({ getRef }) => {
+const Skills = memo(({ getRef }) => {
   const skillsRef = useRef();
   useEffect(() => {
     getRef(skillsRef, "skills");
@@ -61,6 +61,6 @@ const Skills = ({ getRef }) => {
       </div>
     </section>
   );
-};
+});
 
 export default Skills;

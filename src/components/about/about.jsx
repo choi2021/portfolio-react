@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef } from "react";
 import styles from "./about.module.css";
 import { FaReact, FaJs } from "react-icons/fa";
 
-const About = ({ getRef }) => {
+const About = memo(({ getRef }) => {
   const aboutRef = useRef();
   useEffect(() => {
     getRef(aboutRef, "about");
@@ -41,6 +41,6 @@ const About = ({ getRef }) => {
       </div>
     </section>
   );
-};
+});
 
 export default About;

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef } from "react";
 import styles from "./home.module.css";
-const Home = ({ onClick, getRef }) => {
+const Home = memo(({ onClick, getRef }) => {
   const homeRef = useRef();
   useEffect(() => {
     getRef(homeRef, "home");
@@ -20,6 +20,6 @@ const Home = ({ onClick, getRef }) => {
       </button>
     </section>
   );
-};
+});
 
 export default Home;

@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef } from "react";
 import styles from "./contact.module.css";
 import { FaGithub } from "react-icons/fa";
 
-const Contact = ({ getRef }) => {
+const Contact = memo(({ getRef }) => {
   const contactRef = useRef();
 
   useEffect(() => {
@@ -23,6 +23,6 @@ const Contact = ({ getRef }) => {
       <p className={styles.right}>2022 Youngjun Choi - All rihgts reserved</p>
     </section>
   );
-};
+});
 
 export default Contact;

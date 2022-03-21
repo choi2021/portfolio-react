@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./menubtn.module.css";
 
-const MenuBtn = ({ name, active }) => {
+const MenuBtn = memo(({ name, active }) => {
   return (
     <button
       className={`${styles.btn} ${activateBtn(active)}`}
@@ -10,7 +10,7 @@ const MenuBtn = ({ name, active }) => {
       {name}
     </button>
   );
-};
+});
 
 export default MenuBtn;
 
