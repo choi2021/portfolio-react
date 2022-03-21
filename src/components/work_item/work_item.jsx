@@ -16,11 +16,10 @@ const WorkItem = memo(({ url, imgURL, title, description, invisible }) => {
 });
 
 function listDisplay(prop) {
-  switch (prop) {
-    case false:
-      return styles.container;
-    case true:
-      return styles.invisible;
+  if (!prop) {
+    return styles.container;
+  } else {
+    return styles.invisible;
   }
 }
 

@@ -4,7 +4,7 @@ const Home = memo(({ onClick, getRef }) => {
   const homeRef = useRef();
   useEffect(() => {
     getRef(homeRef, "home");
-  }, []);
+  }, [getRef]);
   return (
     <section className={styles.container} data-section="home" ref={homeRef}>
       <img

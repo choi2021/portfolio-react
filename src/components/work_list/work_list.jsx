@@ -22,10 +22,9 @@ const WorkList = ({ workList, clicked }) => {
 export default WorkList;
 
 function listStyle(clicked) {
-  switch (clicked) {
-    case true:
-      return styles.anim;
-    case false:
-      return undefined;
+  if (!clicked) {
+    return undefined;
+  } else {
+    return styles.anim;
   }
 }

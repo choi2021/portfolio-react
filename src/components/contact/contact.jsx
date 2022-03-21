@@ -7,7 +7,7 @@ const Contact = memo(({ getRef }) => {
 
   useEffect(() => {
     getRef(contactRef, "contact");
-  }, []);
+  }, [getRef]);
 
   return (
     <section
@@ -17,7 +17,7 @@ const Contact = memo(({ getRef }) => {
     >
       <h1 className={styles.title}>Let's Talk</h1>
       <h3 className={styles.email}>juni2004c@gmail.com</h3>
-      <a href="#" className={styles.btn}>
+      <a href="https://github.com/choi2021" className={styles.btn}>
         <FaGithub></FaGithub>
       </a>
       <p className={styles.right}>2022 Youngjun Choi - All rihgts reserved</p>

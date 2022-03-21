@@ -6,7 +6,7 @@ const About = memo(({ getRef }) => {
   const aboutRef = useRef();
   useEffect(() => {
     getRef(aboutRef, "about");
-  }, []);
+  }, [getRef]);
   return (
     <section className={styles.container} ref={aboutRef} data-section="about">
       <h1 className={styles.title}>About Me</h1>

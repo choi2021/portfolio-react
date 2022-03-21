@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef } from "react";
 import Skill from "../skill/skill";
 import styles from "./skills.module.css";
 
@@ -6,8 +6,8 @@ const Skills = memo(({ getRef }) => {
   const skillsRef = useRef();
   useEffect(() => {
     getRef(skillsRef, "skills");
-  }, []);
-  const [stacks, setStacks] = useState([
+  }, [getRef]);
+  const stacks = [
     {
       name: "HTML",
       amount: "60%",
@@ -24,7 +24,7 @@ const Skills = memo(({ getRef }) => {
       name: "React",
       amount: "15%",
     },
-  ]);
+  ];
   return (
     <section className={styles.container} ref={skillsRef} data-section="skills">
       <h1 className={styles.title}>Skills</h1>
