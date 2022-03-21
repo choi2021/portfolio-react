@@ -33,7 +33,7 @@ const About = memo(({ getRef }) => {
         </li>
       </ul>
       <div className={styles.degree}>
-        <img className={styles.logo} src="/assets/gist_logo.jpg" alt="gist" />
+        <img className={styles.logo} src="./assets/gist_logo.jpg" alt="gist" />
         <p className={styles.metadata}>
           <span>Undergraduate chemistry major</span>
           <span>2016 March - 2022 Feb</span>

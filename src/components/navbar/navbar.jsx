@@ -24,7 +24,7 @@ const Navbar = memo(({ refs, visible, onActive, btns }) => {
   return (
     <header className={`${styles.header} ${visibleNav(visible)}`}>
       <div className={styles.logoAndTitle}>
-        <img className={styles.logo} src="/assets/favicon.png" alt="" />
+        <img className={styles.logo} src="./assets/favicon.png" alt="" />
         <h1 className={styles.title}>Young jun</h1>
       </div>
       <ul
