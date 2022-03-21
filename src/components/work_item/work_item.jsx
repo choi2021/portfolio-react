@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./work_item.module.css";
 
-const WorkItem = ({ url, imgURL, title, description, invisible }) => {
+const WorkItem = memo(({ url, imgURL, title, description, invisible }) => {
   return (
     <li className={listDisplay(invisible)}>
       <a href={url} className={styles.a}>
@@ -13,7 +13,7 @@ const WorkItem = ({ url, imgURL, title, description, invisible }) => {
       </a>
     </li>
   );
-};
+});
 
 function listDisplay(prop) {
   switch (prop) {

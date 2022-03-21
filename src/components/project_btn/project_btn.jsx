@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./project_btn.module.css";
 
-const ProjectBtn = ({ title, count, clicked, category }) => {
+const ProjectBtn = memo(({ title, count, clicked, category }) => {
   return (
     <li className={styles.item}>
       <button
@@ -15,5 +15,5 @@ const ProjectBtn = ({ title, count, clicked, category }) => {
       </div>
     </li>
   );
-};
+});
 export default ProjectBtn;
