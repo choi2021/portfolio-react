@@ -1,8 +1,8 @@
 @value colorBlue,colorDarkBlue from "../../common/color.css";
+@value mediaQuery from "../../common/size.css";
 .container {
-  height: 100vh;
   margin-top: 5em;
-  padding: 0.5em 0;
+  padding: 5em;
   text-align: center;
 }
 
@@ -11,8 +11,8 @@
 }
 
 .message {
-  font-size: 1.3rem;
-  margin-bottom: 4em;
+  font-size: 1.2rem;
+  margin: 4em 0;
 }
 
 .stacks {
@@ -22,10 +22,11 @@
   justify-content: space-between;
   list-style: none;
   margin-bottom: 4em;
+  padding-left: 0;
 }
 
 .stack {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .icon {
@@ -64,4 +65,16 @@
   margin-left: 1em;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .stacks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .message {
+    font-size: 0.9rem;
+    margin-bottom: 4em;
+  }
 }

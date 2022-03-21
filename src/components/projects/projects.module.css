@@ -2,9 +2,11 @@
 
 .container {
   margin-top: 5em;
-  padding: 0.5em 0;
+  padding: 5em 0;
   text-align: center;
   color: colorBlack;
+  max-width: 90rem;
+  margin: auto;
 }
 
 .title {

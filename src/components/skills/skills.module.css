@@ -1,9 +1,8 @@
 @value colorLightGray,colorWhite,colorDarkGray,colorDimGray,colorBlack from "../../common/color.css";
 
 .container {
-  height: 100vh;
   margin-top: 5em;
-  padding: 0.5em 0;
+  padding: 5em 0;
   text-align: center;
   background-color: colorLightGray;
   color: colorBlack;
@@ -27,7 +26,6 @@
   background-color: colorBlack;
   display: flex;
   margin: auto;
-  width: 55rem;
   color: colorWhite;
 }
 

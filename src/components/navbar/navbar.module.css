@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   background-color: colorDarkBlue;
-  height: 6rem;
+  height: 5rem;
   display: flex;
   color: colorWhite;
   z-index: 100;
@@ -38,7 +38,7 @@
   flex-basis: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 1em;
   margin-right: 1em;
 }
@@ -62,6 +62,10 @@
 
   .logoAndTitle {
     padding: 1em 0;
+  }
+
+  .title {
+    font-size: 1.2rem;
   }
 
   .btns {
