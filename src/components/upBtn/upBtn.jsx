@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { FaHandPointUp } from "react-icons/fa";
 import styles from "./upbtn.module.css";
 
-const UpBtn = ({ onClick, visible }) => {
+const UpBtn = memo(({ onClick, visible }) => {
   return (
     <button
       className={`${styles.btn} ${visibleBtn(visible)}`}
@@ -11,7 +11,7 @@ const UpBtn = ({ onClick, visible }) => {
       <FaHandPointUp></FaHandPointUp>
     </button>
   );
-};
+});
 
 export default UpBtn;
 

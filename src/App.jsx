@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Navbar from "./components/navbar/navbar";
 import Home from "./components/home/home";
 import About from "./components/about/about";
@@ -8,6 +8,7 @@ import Contact from "./components/contact/contact";
 import UpBtn from "./components/upbtn/upbtn";
 
 function App({ projects }) {
+  const [activeBtn, setActiveBtn] = useState("home");
   const [sectionRefs, setSectionRefs] = useState({});
   const [visibleNav, setVisibleNav] = useState(false);
   const [visibleBtn, setVisibleBtn] = useState(false);
@@ -50,16 +51,17 @@ function App({ projects }) {
           const index = Object.values(sectionRefs)
             .map((item) => item.current)
             .indexOf(entry.target);
+
           if (entry.boundingClientRect.y < 0) {
             const section = Object.values(sectionRefs).map(
               (item) => item.current.dataset.section
             )[index + 1];
-            handleActive(section);
+            setActiveBtn(section);
           } else {
             const section = Object.values(sectionRefs).map(
               (item) => item.current.dataset.section
             )[index - 1];
-            handleActive(section);
+            setActiveBtn(section);
           }
         }
       });
@@ -69,6 +71,20 @@ function App({ projects }) {
       observer.observe(ref.current);
     });
   }, [sectionRefs]);
+
+  useEffect(() => {
+    window.addEventListener("wheel", () => {
+      if (window.screenY === 0) {
+        setActiveBtn("home");
+      } else if (
+        window.innerHeight + window.scrollY ===
+        document.body.clientHeight
+      ) {
+        setActiveBtn("contact");
+      }
+      handleActive(activeBtn);
+    });
+  }, [activeBtn]);
 
   const [btns, setBtns] = useState([
     {
@@ -93,18 +109,18 @@ function App({ projects }) {
     },
   ]);
 
-  const handleContactBtn = () => {
+  const handleContactBtn = useCallback(() => {
     sectionRefs["contact"].current.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
-  };
+  }, []);
 
-  const getRefs = (ref, key) => {
+  const getRefs = useCallback((ref, key) => {
     setSectionRefs((refs) => {
       return { ...refs, [key]: ref };
     });
-  };
+  }, []);
 
   const handleUpbtn = () => {
     sectionRefs["home"].current.scrollIntoView({
