@@ -2,12 +2,14 @@
 @value mediaQuery from "../../common/size.css";
 
 .header {
+  padding: 1em 0;
   position: fixed;
   top: 0;
   width: 100%;
   background-color: colorDarkBlue;
   height: 5rem;
   display: flex;
+  align-items: center;
   color: colorWhite;
   z-index: 100;
   transition: all ease 300ms;
@@ -45,7 +47,7 @@
 
 .mobileBtn {
   position: absolute;
-  top: 2rem;
+  top: 1.4rem;
   right: 2rem;
   font-size: 1.7rem;
   cursor: pointer;
@@ -58,14 +60,11 @@
 @media screen and (max-width: mediaQuery) {
   .header {
     flex-direction: column;
-  }
-
-  .logoAndTitle {
-    padding: 1em 0;
+    align-items: flex-start;
   }
 
   .title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .btns {

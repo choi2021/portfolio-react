@@ -1,5 +1,6 @@
 @value colorBlue,colorDarkBlue from "../../common/color.css";
 @value mediaQuery from "../../common/size.css";
+
 .container {
   margin-top: 5em;
   padding: 5em;

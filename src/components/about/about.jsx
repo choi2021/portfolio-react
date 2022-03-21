@@ -12,9 +12,8 @@ const About = ({ getRef }) => {
       <h1 className={styles.title}>About Me</h1>
       <p className={styles.message}>
         2021년 5월, HTML과 CSS공부를 시작으로 자바스크립트, 리액트를 즐겁게
-        공부하고 있습니다.<br></br>
-        프론트엔드 개발자를 목표로 오늘보다 내일 더 다가갈 수 있게 매일 공부하고
-        기록해나가겠습니다.
+        공부하고 있습니다. 프론트엔드 개발자를 목표로 오늘보다 내일 더 다가갈 수
+        있게 매일 공부하고 기록해나가겠습니다.
       </p>
       <ul className={styles.stacks}>
         <li className={styles.stack}>

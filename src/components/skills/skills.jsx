@@ -31,12 +31,10 @@ const Skills = ({ getRef }) => {
       <h3 className={styles.subtitle}>Skills & Attributes</h3>
       <p className={styles.description}>
         프론트엔드의 기본인 HTML,CSS, vanilla JS를 공부해 DOM과 페이지가
-        rendering되는 과정을 이해하고 있습니다.<br></br>
+        rendering되는 과정을 이해하고 있습니다.
         <b>REACT</b>와 함께, 상태관리를 위한 Redux, 페이지 관리를 위한 Router
-        등을 공부하고 있습니다.
-        <br></br>
-        협업에 중요한 <b>Git</b>과 부족한 CS에 대해서 매일 공부하고 있습니다.
-        <br></br>
+        등을 공부하고 있습니다. 협업에 중요한 <b>Git</b>과 부족한 CS에 대해서
+        매일 공부하고 있습니다.
       </p>
       <div className={styles.content}>
         <ul className={styles.bars}>

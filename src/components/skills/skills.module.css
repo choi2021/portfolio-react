@@ -1,8 +1,9 @@
 @value colorLightGray,colorWhite,colorDarkGray,colorDimGray,colorBlack from "../../common/color.css";
+@value mediaQuery from "../../common/size.css";
 
 .container {
   margin-top: 5em;
-  padding: 5em 0;
+  padding: 5em;
   text-align: center;
   background-color: colorLightGray;
   color: colorBlack;
@@ -13,16 +14,18 @@
 }
 
 .subtitle {
+  margin: 2em 0;
   font-size: 1.5rem;
 }
 
 .description {
+  margin: auto;
+  padding: 0 5em;
   font-size: 1.1rem;
   margin-bottom: 4em;
 }
 
 .content {
-  height: 20rem;
   background-color: colorBlack;
   display: flex;
   margin: auto;
@@ -31,7 +34,7 @@
 
 .bars {
   margin: 0;
-  padding: 0;
+  padding: 1.5em 0;
   flex-basis: 65%;
   list-style: none;
 }
@@ -51,4 +54,10 @@
 .etc {
   background-color: colorDimGray;
   flex-basis: 50%;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .content {
+    flex-direction: column;
+  }
 }
