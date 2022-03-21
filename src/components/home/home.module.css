@@ -2,6 +2,7 @@
 
 .container {
   background: url("/public/assets/home.jpg") center/cover;
+  width: 100%;
   height: 110vh;
   padding: 0.5em 0;
   text-align: center;

@@ -1,4 +1,5 @@
 @value colorDarkBlue,colorWhite from "../../common/color.css";
+@value mediaQuery from "../../common/size.css";
 
 .btn {
   padding: 0.5em 1em;
@@ -23,4 +24,13 @@
   border-color: colorWhite;
   background-color: colorWhite;
   color: colorDarkBlue;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
 }
