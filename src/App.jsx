@@ -8,11 +8,42 @@ import Contact from "./components/contact/contact";
 import UpBtn from "./components/upbtn/upbtn";
 
 function App({ projects }) {
-  const [activeBtn, setActiveBtn] = useState("home");
   const [sectionRefs, setSectionRefs] = useState({});
   const [visibleNav, setVisibleNav] = useState(false);
   const [visibleBtn, setVisibleBtn] = useState(false);
-
+  const [btns, setBtns] = useState([
+    {
+      name: "home",
+      active: true,
+    },
+    {
+      name: "about",
+      active: false,
+    },
+    {
+      name: "skills",
+      active: false,
+    },
+    {
+      name: "projects",
+      active: false,
+    },
+    {
+      name: "contact",
+      active: false,
+    },
+  ]);
+  const handleActive = useCallback((section) => {
+    setBtns((btns) => {
+      return btns.map((btn) => {
+        if (btn.name === section) {
+          return { ...btn, active: true };
+        } else {
+          return { ...btn, active: false };
+        }
+      });
+    });
+  }, []);
   useEffect(() => {
     window.addEventListener("wheel", (e) => {
       if (sectionRefs.home === undefined) {
@@ -51,70 +82,44 @@ function App({ projects }) {
           const index = Object.values(sectionRefs)
             .map((item) => item.current)
             .indexOf(entry.target);
-
           if (entry.boundingClientRect.y < 0) {
             const section = Object.values(sectionRefs).map(
               (item) => item.current.dataset.section
             )[index + 1];
-            setActiveBtn(section);
+            handleActive(section);
           } else {
             const section = Object.values(sectionRefs).map(
               (item) => item.current.dataset.section
             )[index - 1];
-            setActiveBtn(section);
+            handleActive(section);
           }
         }
       });
     }, options);
-
     Object.values(sectionRefs).forEach((ref) => {
       observer.observe(ref.current);
     });
-  }, [sectionRefs]);
+  }, [sectionRefs, handleActive]);
 
   useEffect(() => {
     window.addEventListener("wheel", () => {
       if (window.screenY === 0) {
-        setActiveBtn("home");
+        handleActive("home");
       } else if (
         window.innerHeight + window.scrollY ===
         document.body.clientHeight
       ) {
-        setActiveBtn("contact");
+        handleActive("contact");
       }
-      handleActive(activeBtn);
     });
-  }, [activeBtn]);
-
-  const [btns, setBtns] = useState([
-    {
-      name: "home",
-      active: true,
-    },
-    {
-      name: "about",
-      active: false,
-    },
-    {
-      name: "skills",
-      active: false,
-    },
-    {
-      name: "projects",
-      active: false,
-    },
-    {
-      name: "contact",
-      active: false,
-    },
-  ]);
+  }, [handleActive]);
 
   const handleContactBtn = useCallback(() => {
     sectionRefs["contact"].current.scrollIntoView({
       behavior: "smooth",
       block: "center",
     });
-  }, []);
+  }, [sectionRefs]);
 
   const getRefs = useCallback((ref, key) => {
     setSectionRefs((refs) => {
@@ -126,18 +131,6 @@ function App({ projects }) {
     sectionRefs["home"].current.scrollIntoView({
       behavior: "smooth",
       block: "center",
-    });
-  };
-
-  const handleActive = (section) => {
-    setBtns((btns) => {
-      return btns.map((btn) => {
-        if (btn.name === section) {
-          return { ...btn, active: true };
-        } else {
-          return { ...btn, active: false };
-        }
-      });
     });
   };
 
